@@ -1,19 +1,37 @@
-'use client'
+"use client";
 
 import "./Item.scss";
 
 import api from "../../api";
+import { useRouter } from "next/navigation";
 
+//todo aplicartipado a toda la app
 export default async function itemPage({
   params: { id },
 }: {
   params: { id: string };
 }) {
+  const router = useRouter();
   //fetch
   const item = await api.item.fetch(id);
   //handler
+  let arrayIds = [];
   const handleCar = (id) => {
-    // localStorage.setItem("idsCar", id);
+    const idObjectJSON = localStorage.getItem("idsCar");
+    let idObject = {};
+
+    if (idObjectJSON) {
+      idObject = JSON.parse(idObjectJSON);
+    }
+
+    // Paso 2: Agregar un nuevo ID al objeto
+    idObject[id] = true;
+
+    // Paso 3: Convertir el objeto actualizado a JSON y guardar en el LocalStorage
+    const idObjectActualizadoJSON = JSON.stringify(idObject);
+    localStorage.setItem("idsCar", idObjectActualizadoJSON);
+
+    router.push("/car", { scroll: false });
   };
 
   return (

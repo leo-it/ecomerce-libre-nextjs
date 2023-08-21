@@ -25,7 +25,7 @@ const api = {
     },
     search: (query: string) =>
       fetch(
-        `https://api.mercadolibre.com/sites/MLA/search?q=${query}&limit=4`
+        `https://api.mercadolibre.com/sites/MLA/search?q=${query}&limit=15`
       ).then(
         (res) =>
           res.json() as Promise<{
