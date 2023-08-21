@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@fortawesome/react-fontawesome': ^0.2.0
   '@types/node': 20.5.1
   '@types/react': 18.2.20
   '@types/react-dom': 18.2.7
@@ -11,20 +12,23 @@ specifiers:
   postcss: 8.4.28
   react: 18.2.0
   react-dom: 18.2.0
+  sass: ^1.66.1
   tailwindcss: 3.3.3
   typescript: 5.1.6
 
 dependencies:
+  '@fortawesome/react-fontawesome': 0.2.0_react@18.2.0
   '@types/node': 20.5.1
   '@types/react': 18.2.20
   '@types/react-dom': 18.2.7
   autoprefixer: 10.4.15_postcss@8.4.28
   eslint: 8.47.0
   eslint-config-next: 13.4.19_qj3u6ezxe2airdzjq3nyoxe24m
-  next: 13.4.19_biqbaboplfbrettd7655fr4n2y
+  next: 13.4.19_tmjnz6z74jqyaklcl2ti4hi67a
   postcss: 8.4.28
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  sass: 1.66.1
   tailwindcss: 3.3.3
   typescript: 5.1.6
 
@@ -82,6 +86,16 @@ packages:
   /@eslint/js/8.47.0:
     resolution: {integrity: sha512-P6omY1zv5MItm93kLM8s2vr1HICJH8v0dvddDhysbIuZ+vcjOHg5Zbkf1mTkcmi2JA9oBG2anOkRnW8WJTS8Og==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dev: false
+
+  /@fortawesome/react-fontawesome/0.2.0_react@18.2.0:
+    resolution: {integrity: sha512-uHg75Rb/XORTtVt7OS9WoK8uM276Ufi7gCzshVWkUJbHhh3svsUUeqXerrM96Wm7fRiDzfKRwSoahhMIkGAYHw==}
+    peerDependencies:
+      '@fortawesome/fontawesome-svg-core': ~1 || ~6
+      react: '>=16.3'
+    dependencies:
+      prop-types: 15.8.1
+      react: 18.2.0
     dev: false
 
   /@humanwhocodes/config-array/0.11.10:
@@ -1378,6 +1392,10 @@ packages:
     engines: {node: '>= 4'}
     dev: false
 
+  /immutable/4.3.2:
+    resolution: {integrity: sha512-oGXzbEDem9OOpDWZu88jGiYCvIsLHMvGw+8OXlpsvTFvIQplQbjg1B1cvKg8f7Hoch6+NGjpPsH1Fr+Mc2D1aA==}
+    dev: false
+
   /import-fresh/3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
     engines: {node: '>=6'}
@@ -1732,7 +1750,7 @@ packages:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: false
 
-  /next/13.4.19_biqbaboplfbrettd7655fr4n2y:
+  /next/13.4.19_tmjnz6z74jqyaklcl2ti4hi67a:
     resolution: {integrity: sha512-HuPSzzAbJ1T4BD8e0bs6B9C1kWQ6gv8ykZoRWs5AQoiIuqbGHHdQO7Ljuvg05Q0Z24E2ABozHe6FxDvI6HfyAw==}
     engines: {node: '>=16.8.0'}
     hasBin: true
@@ -1754,6 +1772,7 @@ packages:
       postcss: 8.4.14
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+      sass: 1.66.1
       styled-jsx: 5.1.1_react@18.2.0
       watchpack: 2.4.0
       zod: 3.21.4
@@ -2161,6 +2180,16 @@ packages:
       call-bind: 1.0.2
       get-intrinsic: 1.2.1
       is-regex: 1.1.4
+    dev: false
+
+  /sass/1.66.1:
+    resolution: {integrity: sha512-50c+zTsZOJVgFfTgwwEzkjA3/QACgdNsKueWPyAR0mRINIvLAStVQBbPg14iuqEQ74NPDbXzJARJ/O4SI1zftA==}
+    engines: {node: '>=14.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.5.3
+      immutable: 4.3.2
+      source-map-js: 1.0.2
     dev: false
 
   /scheduler/0.23.0:

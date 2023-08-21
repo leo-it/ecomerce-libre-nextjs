@@ -9,6 +9,8 @@ const api = {
             thumbnail: string;
             price: number;
             currency_id: string;
+            condition: string;
+            sold_quantity: number;
           }>
       );
       const { plain_text } = await fetch(
@@ -43,4 +45,4 @@ const api = {
       ),
   },
 };
-export default api
+export default api;
