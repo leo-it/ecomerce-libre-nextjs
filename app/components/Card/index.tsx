@@ -5,6 +5,8 @@ import React from "react";
 // import TruckIcon from "../../../public/img/ic_shipping.png";
 
 const Card = ({ item }) => {
+  // console.log("asd",item);
+  
   return (
     <div className="Card">
       <div className="productData">
@@ -17,11 +19,7 @@ const Card = ({ item }) => {
               style: "currency",
               currency: item.currency_id,
             })}
-          {/*   {item.free_shipping ? (
-              <img className="truckIcon" src={TruckIcon} alt="free shipping" />
-            ) : (
-              ""
-            )} */}
+          
           </span>
           <span className="productName">{item.title}</span>
         </div>
