@@ -3,20 +3,20 @@
 import "./Item.scss";
 
 import api from "../../api";
-import { useRouter } from "next/navigation";
+import { useRouter } from 'next/navigation'
 
-//todo aplicartipado a toda la app
+//todo aplicartipado a toda
 export default async function itemPage({
   params: { id },
 }: {
   params: { id: string };
 }) {
-  const router = useRouter();
+  const router = useRouter()
   //fetch
   const item = await api.item.fetch(id);
   //handler
   let arrayIds = [];
-  const handleCar = (id) => {
+  const handleCar = (item) => {
     const idObjectJSON = localStorage.getItem("idsCar");
     let idObject = {};
 
@@ -25,7 +25,9 @@ export default async function itemPage({
     }
 
     // Paso 2: Agregar un nuevo ID al objeto
-    idObject[id] = true;
+    idObject[item.id] = {
+      ...item,title:item.title,img:item.thumbnail, quantity: "1", price: parseFloat((parseFloat(item?.price)).toFixed(3))};
+    };
 
     // Paso 3: Convertir el objeto actualizado a JSON y guardar en el LocalStorage
     const idObjectActualizadoJSON = JSON.stringify(idObject);
@@ -69,7 +71,7 @@ export default async function itemPage({
                   <div className="grid gap-2">
                     <button className="itemBuy">Comprar</button>
                     <button
-                      onClick={() => handleCar(item.id)}
+                      onClick={() => handleCar(item)}
                       className="itemCar"
                     >
                       Agregar al carrito
