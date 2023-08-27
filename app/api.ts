@@ -23,9 +23,9 @@ const api = {
       );
       return { ...item, description: plain_text };
     },
-    search: (query: string) =>
+    search: (query: string, limit:number) =>
       fetch(
-        `https://api.mercadolibre.com/sites/MLA/search?q=${query}&limit=15`
+        `https://api.mercadolibre.com/sites/MLA/search?q=${query}&limit=${limit}`
       ).then(
         (res) =>
           res.json() as Promise<{

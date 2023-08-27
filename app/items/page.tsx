@@ -8,7 +8,7 @@ export default async function ItemsPage({
 }: {
   searchParams: { search: string };
 }) {
-  const { results } = await api.item.search(searchParams.search);
+  const { results } = await api.item.search(searchParams.search,10);
 
   return (
     <section>

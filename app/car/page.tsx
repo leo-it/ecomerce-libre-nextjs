@@ -20,7 +20,6 @@ const Car = () => {
 
   const renderedCards = [];
   const handleDelete = (id) => {
-    console.log(id, "id");
     if (items.hasOwnProperty(id)) {
       delete items[id];
       let objItems = JSON.stringify(items);

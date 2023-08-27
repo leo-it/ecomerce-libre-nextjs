@@ -4,14 +4,16 @@ import "./Item.scss";
 
 import api from "../../api";
 import { useRouter } from "next/navigation";
+import useStore from "@/app/store";
 
-//todo aplicartipado a toda
 export default async function itemPage({
   params: { id },
 }: {
   params: { id: string };
 }) {
   const router = useRouter();
+  const { setCarLength } = useStore();
+
   //fetch
   const item = await api.item.fetch(id);
   //handler
@@ -33,14 +35,10 @@ export default async function itemPage({
       price: item.price,
       currency_id: item.currency_id,
     };
-    /* {
-      ...item,title:item.title,img:item.thumbnail, quantity: "1", price: parseFloat((parseFloat(item?.price)).toFixed(3))};
-    }; */
-
-    // Paso 3: Convertir el objeto actualizado a JSON y guardar en el LocalStorage
+   
     const idObjectActualizadoJSON = JSON.stringify(idObject);
     localStorage.setItem("idsCar", idObjectActualizadoJSON);
-
+    setCarLength(Object.keys(JSON.parse(localStorage.getItem("idsCar"))).length);
     router.push("/car", { scroll: false });
   };
 
