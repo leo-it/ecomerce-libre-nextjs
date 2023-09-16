@@ -1,7 +1,11 @@
 import create from "zustand";
 
-const useStore = create((set) => ({
-  carLength: null,
+interface CarState {
+  carLength: number;
+  setCarLength: (by: number) => void;
+}
+const useStore = create<CarState>()((set) => ({
+  carLength: 0,
 
   setCarLength: (carLength: number) => set({ carLength }),
 }));

@@ -1,15 +1,27 @@
 "use client";
 
-import React from "react";
+import React, { FC } from "react";
+
 import { useRouter } from "next/navigation";
 import useStore from "@/app/store";
 
-export const Buttons = ({ item }) => {
+interface Item {
+  id: string;
+  title: string;
+  thumbnail: string;
+  quantity: number;
+  price: number;
+  currency_id: string;
+}
+interface Props {
+  item: Item;
+}
+export const Buttons: FC<Props> = ({ item }) => {
   const router = useRouter();
   const { setCarLength } = useStore();
   let arrayIds = [];
 
-  const handleCar = (item) => {
+  const handleCar = (item: Item) => {
     const idObjectJSON = localStorage.getItem("idsCar");
     let idObject = {};
 
@@ -34,6 +46,8 @@ export const Buttons = ({ item }) => {
     ).length;
 
     setCarLength(carLength);
+    
+
     router.push("/car", { scroll: false });
   };
   return (

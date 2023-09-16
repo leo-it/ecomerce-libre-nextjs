@@ -1,12 +1,23 @@
 import "./Card.scss";
 
-import React from "react";
+import React, { FC } from "react";
 
 // import TruckIcon from "../../../public/img/ic_shipping.png";
-
-const Card = ({ item }) => {
+interface Item {
+  id: string;
+  title: string;
+  thumbnail: string;
+  quantity: number;
+  price: number;
+  currency_id: string;
+  location: string;
+}
+interface Props {
+  item: Item;
+}
+const Card: FC<Props> = ({ item }) => {
   // console.log("asd",item);
-  
+
   return (
     <div className="Card">
       <div className="productData">
@@ -19,7 +30,6 @@ const Card = ({ item }) => {
               style: "currency",
               currency: item.currency_id,
             })}
-          
           </span>
           <span className="productName">{item.title}</span>
         </div>
