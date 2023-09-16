@@ -29,6 +29,7 @@ export const Buttons: FC<Props> = ({ item }) => {
       idObject = JSON.parse(idObjectJSON);
     }
 
+    // @ts-ignore
     // Paso 2: Agregar un nuevo ID al objeto
     idObject[item.id] = {
       id: item.id,
@@ -42,11 +43,12 @@ export const Buttons: FC<Props> = ({ item }) => {
     const idObjectActualizadoJSON = JSON.stringify(idObject);
     localStorage.setItem("idsCar", idObjectActualizadoJSON);
     let carLength = Object.keys(
+      // @ts-ignore
+
       JSON.parse(localStorage.getItem("idsCar"))
     ).length;
 
     setCarLength(carLength);
-    
 
     router.push("/car", { scroll: false });
   };
