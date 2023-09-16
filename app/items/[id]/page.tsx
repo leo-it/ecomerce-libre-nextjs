@@ -1,6 +1,8 @@
 import "./Item.scss";
 
 import { Buttons } from "./Buttons";
+import Image from "next/image";
+import { ImageById } from "./ImageById";
 import api from "../../api";
 
 export default async function itemPage({
@@ -10,18 +12,16 @@ export default async function itemPage({
 }) {
   //fetch
   const item = await api.item.fetch(id);
-  //handler
 
   return (
     <section className="grid gap-2">
       <div className="Item">
         {item ? (
           <>
-           
             <div className="itemData">
               <div className="itemTop">
                 <div className="itemImage">
-                  <img src={item.thumbnail} alt="" />
+                  <ImageById item={item} />
                 </div>
                 <div className="itemInfo">
                   <div className="itemDetails">

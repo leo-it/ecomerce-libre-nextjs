@@ -1,9 +1,9 @@
 "use client";
 
-import React from 'react'
+import React from "react";
 
-export const ButtonDelete = ({items,id}) => {
-  const handleDelete = (id) => {
+export const ButtonDelete = ({ items, id }: { items: any; id: string }) => {
+  const handleDelete = (id:string) => {
     if (items.hasOwnProperty(id)) {
       delete items[id];
       let objItems = JSON.stringify(items);
@@ -13,7 +13,5 @@ export const ButtonDelete = ({items,id}) => {
       // console.log("La clave no existe en el objeto principal:", items);
     }
   };
-  return (
-    <button onClick={() => handleDelete(item.id)}>Eliminar</button>
-    )
-}
+  return <button onClick={() => handleDelete(items.id)}>Eliminar</button>;
+};
