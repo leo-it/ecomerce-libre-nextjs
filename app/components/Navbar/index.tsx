@@ -35,7 +35,7 @@ const Navbar = (props: Props) => {
           role="button"
           className="relative flex"
         >
-          <h3 className="w-[200px] text-center leading-4 font-weight: 500 text-lg tracking-wider">
+          <h3 className="w-[200px] text-cyan-50 text-center leading-4 font-weight: 500 text-lg tracking-wider">
             Mercadito
           </h3>
         </Link>

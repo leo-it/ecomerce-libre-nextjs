@@ -1,4 +1,3 @@
-import Breadcrumb from "../components/Breadcrumb";
 import Card from "../components/Card";
 import Link from "next/link";
 import api from "../api";
@@ -12,8 +11,8 @@ export default async function ItemsPage({
 
   return (
     <section>
-      {/* <div className="productBreadcrumb">
-            <Breadcrumb categories={item.categories} />
+      {/* <div className="product">
+            < categories={item.categories} />
           </div> */}
       <article className="grid gap-4">
         {results.map((item) => (

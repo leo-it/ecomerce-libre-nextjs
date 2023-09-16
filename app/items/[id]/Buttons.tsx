@@ -1,0 +1,47 @@
+"use client";
+
+import React from "react";
+import { useRouter } from "next/navigation";
+import useStore from "@/app/store";
+
+export const Buttons = ({ item }) => {
+  const router = useRouter();
+  const { setCarLength } = useStore();
+  let arrayIds = [];
+
+  const handleCar = (item) => {
+    const idObjectJSON = localStorage.getItem("idsCar");
+    let idObject = {};
+
+    if (idObjectJSON) {
+      idObject = JSON.parse(idObjectJSON);
+    }
+
+    // Paso 2: Agregar un nuevo ID al objeto
+    idObject[item.id] = {
+      id: item.id,
+      title: item.title,
+      thumbnail: item.thumbnail,
+      quantity: "1",
+      price: item.price,
+      currency_id: item.currency_id,
+    };
+
+    const idObjectActualizadoJSON = JSON.stringify(idObject);
+    localStorage.setItem("idsCar", idObjectActualizadoJSON);
+    let carLength = Object.keys(
+      JSON.parse(localStorage.getItem("idsCar"))
+    ).length;
+
+    setCarLength(carLength);
+    router.push("/car", { scroll: false });
+  };
+  return (
+    <div className="grid gap-2">
+      <button className="itemBuy">Comprar</button>
+      <button onClick={() => handleCar(item)} className="itemCar">
+        Agregar al carrito
+      </button>
+    </div>
+  );
+};
