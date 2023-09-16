@@ -1,4 +1,5 @@
-import Card from "../Card";
+// import Card from "../Card";
+
 import Link from "next/link";
 import api from "@/app/api";
 
@@ -25,7 +26,7 @@ const LastSearch = async () => {
                   className="flex gap-"
                   key={item.id}
                 >
-                  <Card item={item} />
+                 {/*  <Card item={item} /> */}
                 </Link>
               </>
             ))}

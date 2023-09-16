@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 import "./Card.scss";
 
 import React, { FC } from "react";

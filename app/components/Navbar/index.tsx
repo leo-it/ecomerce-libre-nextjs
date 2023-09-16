@@ -21,8 +21,9 @@ const Navbar = (props: Props) => {
     if (idsCar) {
       setCarLength(Object.keys(JSON.parse(idsCar)).length);
     }
-  }, []);
+  }, [setCarLength]);
   const handleSubmit = () => {
+    // @ts-ignore
     const searchValue = inputRef.current.value;
     localStorage.setItem("lastSearch", searchValue);
   };

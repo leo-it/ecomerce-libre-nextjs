@@ -19,8 +19,9 @@ const Car = () => {
   // console.log(items);
 
   const renderedCards = [];
-  const handleDelete = (id) => {
+  const handleDelete = (id: string) => {
     if (items.hasOwnProperty(id)) {
+      // @ts-ignore
       delete items[id];
       let objItems = JSON.stringify(items);
       localStorage.setItem("idsCar", objItems);
@@ -31,6 +32,7 @@ const Car = () => {
   };
   for (const itemId in items) {
     if (items.hasOwnProperty(itemId)) {
+      // @ts-ignore
       const item = items[itemId];
       renderedCards.push(
         <div key={item.id} className="flex">
@@ -48,8 +50,8 @@ const Car = () => {
   const buyCar = () => {
     localStorage.setItem("idsCar", "");
     window.location.reload();
-    alert("Compra finalizada")
-/*     Swal.fire(
+    alert("Compra finalizada");
+    /*     Swal.fire(
       'Compra finalizada!',
       'success'
     ) */
