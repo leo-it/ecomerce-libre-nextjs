@@ -42,6 +42,7 @@ export default async function itemPage({
                       currency: item.currency_id,
                     })}
                   </div>
+
                   <Buttons item={item} />
                 </div>
               </div>

@@ -9,7 +9,7 @@ interface Item {
   id: string;
   title: string;
   thumbnail: string;
-  quantity: number;
+  // quantity: number;
   price: number;
   currency_id: string;
 }
