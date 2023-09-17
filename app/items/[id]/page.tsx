@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 import "./Item.scss";
 
 import { Buttons } from "./Buttons";
@@ -21,7 +23,11 @@ export default async function itemPage({
             <div className="itemData">
               <div className="itemTop">
                 <div className="itemImage">
-                  <ImageById item={item} />
+                  {/* <ImageById item={item} /> */}
+                  <img
+                    src={item.thumbnail}
+                    alt={item.title}
+                  />
                 </div>
                 <div className="itemInfo">
                   <div className="itemDetails">
