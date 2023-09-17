@@ -37,7 +37,7 @@ const Car = () => {
       renderedCards.push(
         <div key={item.id} className="flex">
           <Card item={item} />
-          <button onClick={() => handleDelete(item.id)}>Eliminar</button>
+          <button className="md:grid hidden" onClick={() => handleDelete(item.id)}>Eliminar</button>
         </div>
       );
     }

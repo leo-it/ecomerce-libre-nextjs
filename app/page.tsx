@@ -13,14 +13,10 @@ export default async function Home() {
 
       <section>
         <h3>Alimentos</h3>
-        <article className="grid  grid-cols-1 md:grid-cols-3 gap-4">
+        <article className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {alimentos.results.map((item) => (
             <>
-              <Link
-                href={`/items/${item.id}`}
-                className="flex gap-"
-                key={item.id}
-              >
+              <Link href={`/items/${item.id}`} className="flex " key={item.id}>
                 <Card item={item} />
               </Link>
             </>
@@ -33,11 +29,7 @@ export default async function Home() {
         <article className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {tecnologia.results.map((item) => (
             <>
-              <Link
-                href={`/items/${item.id}`}
-                className="flex gap-"
-                key={item.id}
-              >
+              <Link href={`/items/${item.id}`} className="flex " key={item.id}>
                 <Card item={item} />
               </Link>
             </>
@@ -50,11 +42,7 @@ export default async function Home() {
         <article className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {ropa.results.map((item) => (
             <>
-              <Link
-                href={`/items/${item.id}`}
-                className="flex gap-"
-                key={item.id}
-              >
+              <Link href={`/items/${item.id}`} className="flex " key={item.id}>
                 <Card item={item} />
               </Link>
             </>

@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar/>
+        <Navbar />
         <main className="max-x-screen-xl p-4">{children}</main>
       </body>
     </html>
