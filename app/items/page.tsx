@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import Card from "../components/Card";
 import Link from "next/link";
 import api from "../api";

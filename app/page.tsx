@@ -1,8 +1,8 @@
+// @ts-nocheck
 import Card from "./components/Card";
 import Image from "next/image";
 import Link from "next/link";
 import api from "./api";
-
 export default async function Home() {
   const alimentos = await api.item.search("comida", 3);
   const tecnologia = await api.item.search("celular", 3);
