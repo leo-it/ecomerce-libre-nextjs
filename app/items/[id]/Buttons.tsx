@@ -54,7 +54,9 @@ export const Buttons: FC<Props> = ({ item }) => {
   };
   return (
     <div className="grid gap-2">
-      <button className="itemBuy">Comprar</button>
+      <button onClick={() => alert("Compra realizada correctamente")} className="itemBuy">
+        Comprar
+      </button>
       <button onClick={() => handleCar(item)} className="itemCar">
         Agregar al carrito
       </button>
